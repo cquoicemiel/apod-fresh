@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APOD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="name-part">
+            <span class="apod-name">
+                <span>photographie</span>
+                <span>astronomique</span>
+                <span>du jour</span>
+            </span>
+            <span class="line"></span>
+            <span class="apod-slogan">
+                découvrez le cosmos
+            </span>
+        </div>
+        <a class="archives" href="/archives">
+            <img src="{{ url_for('static', filename='images/menu.png') }}" alt="Archives"/>
+            <span >Archives</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="left-part">
+            <div class="text">
+                <h1 class="title">{{ titre }}</h1>
+                <span class="desc">{{ description }}</span>
+                <div class="bottom">
+                    <span class="date">{{ date }}</span>
+                    <span class="nav-arrows">
+                        <img id="previous" class="prev arrow" src="{{ url_for("static", filename="images/arrow.png") }}" alt="Acceder au jour précédent"/>
+                        <img id="next" class="next arrow" src="{{ url_for("static", filename="images/arrow.png") }}" alt="Acceder au jour suivant"/>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="right-part">
+            <img src="{{ image_src }}" alt="Image astronomique"/>
+        </div>
+    </div>
+    <span class="copyright">apod.nasa.gov @ - tous droits réservés</span>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>

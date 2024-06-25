@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archives APOD</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/archives.css') }}">
+</head>
+  <body>
+    <form action="/" method="get">
+        <label for="dateInput">Entrez une date et accédez à son archive</label>
+        <div>
+          <input id="dateInput" name="date" type="date" min="1995-06-20" max="{{ date_max }}" required/>
+          <input type="submit" value="Accéder"/>
+        </div>   
+    </form>
+    <a class="archives" href="/">
+    <img src="{{ url_for('static', filename='images/menu.png') }}" alt="Archives"/>
+    <span >Retour à l'accueil</a>
+  </body>
+</html>
