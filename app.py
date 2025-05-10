@@ -3,13 +3,14 @@ from flask import Flask, render_template, request
 import requests
 import deepl
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # import des clés api nécesaires au fonctionnement du projet
 
-#nasa_api_key = os.environ['NASA_API_KEY']
-nasa_api_key = "aG0heyBXpIMVchlDs1dktmwELh91BZZeawAADWzb"
-#deepl_api_key = os.environ['DEEPL_API_KEY']
-deepl_api_key = "ec4c6a2a-efe7-39a2-2e61-1c5ab2f8558a:fx"
+nasa_api_key = os.environ['NASA_API_KEY']
+deepl_api_key = os.environ['DEEPL_API_KEY']
 
 # Récupérer la date actuelle
 date_actuelle_dd = datetime.now()
